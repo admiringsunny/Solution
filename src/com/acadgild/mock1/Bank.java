@@ -13,6 +13,8 @@ public class Bank {
     public Bank(String name, String location, int numberOfAccount, int numberOfCustomer) {
         this.name = name;
         this.location = location;
+        this.numberOfAccount = numberOfAccount;
+        this.numberOfCustomer = numberOfCustomer;
     }
 
     public String getName() {
@@ -20,7 +22,7 @@ public class Bank {
     }
 
     boolean approveTransaction() {
-        if (numberOfAccount - numberOfCustomer > 0)
+        if (this.numberOfAccount - this.numberOfCustomer > 0)
             return true;
 
         return false;

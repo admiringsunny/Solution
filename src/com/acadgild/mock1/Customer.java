@@ -7,14 +7,8 @@ public class Customer {
     Bank bank;
     Account testAccount;
 
-    public Customer(String name, String address) {
-        this.name = name;
-        this.address = address;
-    }
-
     public Customer(Account account) {
-        bank = new Bank("HDFC", "Bangalore", 10, 0); // new Bank("HDFC", "Bangalore");
-        testAccount = new Account(bank, 100);
+        testAccount = account;
     }
 
     void deposit(double depositAmount) {
