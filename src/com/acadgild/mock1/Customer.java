@@ -21,12 +21,11 @@ public class Customer {
 
     String seeAccountBalance() {
 
-        return String.valueOf(testAccount.getBalance());
+        return testAccount != null ? String.valueOf(testAccount.getBalance()) : "This customer's account is either not created or closed";
     }
 
-    boolean closeAccount() {
-
-        return true;
+    void closeAccount() {
+        testAccount = null;
     }
 
 

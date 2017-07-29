@@ -9,9 +9,12 @@ public class Account {
 
     // create new account in a bank
     public Account(Bank bank, double balance) {
-        this.accountAssociatedToBank = bank.getName();
-        this.balance = balance;
-        accountNumber = bank.getName() + (bank.getNumberOfAccount() - bank.getNumberOfCustomer() + 1);
+        if (bank.approveTransaction()) {
+            this.accountAssociatedToBank = bank.getName();
+            this.balance = balance;
+            accountNumber = bank.getName() + (bank.getNumberOfAccount() - bank.getNumberOfCustomer() + 1);
+            bank.setNumberOfAccount(bank.getNumberOfAccount() - 1);
+        }
     }
 
     double getBalance() {

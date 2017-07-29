@@ -1,8 +1,5 @@
 package com.acadgild.mock1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Bank {
 
     private String name;
@@ -22,7 +19,7 @@ public class Bank {
     }
 
     boolean approveTransaction() {
-        if (this.numberOfAccount - this.numberOfCustomer > 0)
+        if (getNumberOfAccount() > 0)
             return true;
 
         return false;
@@ -34,5 +31,9 @@ public class Bank {
 
     public int getNumberOfAccount() {
         return numberOfAccount;
+    }
+
+    public void setNumberOfAccount(int numberOfAccount) {
+        this.numberOfAccount = numberOfAccount;
     }
 }
